@@ -1,5 +1,5 @@
+from openai import AzureOpenAI
 import numpy as np
-
-# Create an array from 0 to 9
-arr = np.arange(10)
-print(arr)
+from dotenv import dotenv_values
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
