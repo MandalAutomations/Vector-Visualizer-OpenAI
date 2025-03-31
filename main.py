@@ -4,6 +4,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
+load_dotenv()
 
 EMBEDDING_MODEL="text-embedding-ada-002"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -25,13 +26,10 @@ def get_embedding(text: str) -> np.ndarray:
         return None
 
 def plot_embeddings_3d(embeddings_3d, labels):
-    """
-    Plots embeddings in a 3D scatter plot.
-    """
+
     fig = plt.figure(figsize=(10, 7))
     ax = fig.add_subplot(111, projection='3d')
 
-    # Scatter plot
     for i, label in enumerate(labels):
         x, y, z = embeddings_3d[i]
         ax.scatter(x, y, z, label=label)
@@ -43,11 +41,28 @@ def plot_embeddings_3d(embeddings_3d, labels):
     ax.set_zlabel("PCA3")
     ax.legend(loc='center left', bbox_to_anchor=(1.05, 0.5), title="Words")  # Adjust position
     plt.tight_layout()
-    plt.savefig("embeddings_3d_plot.png", dpi=300, bbox_inches='tight')
+    plt.savefig("3d_plot.png", dpi=1000, bbox_inches='tight')
     
 texts = [
-    "dog", "cat", "pet", "animal", "puppy", "kitten", "pizza", "food", "cheese", "fruit",
-    "car", "vehicle", "transportation", "bike", "bicycle", "computer", "laptop", "technology",
+    "football",
+    "soccer",
+    "basketball",
+    "baseball",
+    "tennis",
+    "hockey",
+    "nhl",
+    "mlb",
+    "nba",
+    "nfl",
+    "national football league",
+    "national basketball association",
+    "major league baseball",
+    "national hockey league",
+    "world series",
+    "super bowl",
+    "championship",
+    "playoffs",
+    "finals",
 ]
 
 
