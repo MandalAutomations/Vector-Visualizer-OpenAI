@@ -6,9 +6,8 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 load_dotenv()
 
-EMBEDDING_MODEL="text-embedding-ada-002"
+EMBEDDING_MODEL="text-embedding-3-large" #"text-embedding-3-small" #"text-embedding-ada-002"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-plt.ion()
 
 openai_embeddings = OpenAIEmbeddings(
     model=EMBEDDING_MODEL,
@@ -32,8 +31,9 @@ def plot_embeddings_3d(embeddings_3d, labels):
 
     for i, label in enumerate(labels):
         x, y, z = embeddings_3d[i]
+        text= f"{label} ({x:.2f}, {y:.2f}, {z:.2f})"
         ax.scatter(x, y, z, label=label)
-        ax.text(x, y, z, label, fontsize=10)
+        ax.text(x, y, z, text, fontsize=10)
 
     ax.set_title("3D Visualization of Similar Words Embeddings")
     ax.set_xlabel("PCA1")
@@ -41,28 +41,14 @@ def plot_embeddings_3d(embeddings_3d, labels):
     ax.set_zlabel("PCA3")
     ax.legend(loc='center left', bbox_to_anchor=(1.05, 0.5), title="Words")  # Adjust position
     plt.tight_layout()
-    plt.savefig("3d_plot.png", dpi=1000, bbox_inches='tight')
+    plt.savefig("3d_plot_small.png", dpi=1000, bbox_inches='tight')
     
 texts = [
+    "nfl",
     "football",
     "soccer",
     "basketball",
     "baseball",
-    "tennis",
-    "hockey",
-    "nhl",
-    "mlb",
-    "nba",
-    "nfl",
-    "national football league",
-    "national basketball association",
-    "major league baseball",
-    "national hockey league",
-    "world series",
-    "super bowl",
-    "championship",
-    "playoffs",
-    "finals",
 ]
 
 
