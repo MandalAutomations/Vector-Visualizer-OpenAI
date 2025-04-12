@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 load_dotenv()
 
-EMBEDDING_MODEL="text-embedding-3-large" #"text-embedding-3-small" #"text-embedding-ada-002"
-# EMBEDDING_MODEL="text-embedding-3-small"
-# EMBEDDING_MODEL="text-embedding-ada-002"
+#EMBEDDING_MODEL="text-embedding-3-large" #"text-embedding-3-small" #"text-embedding-ada-002"
+# EMBEDDING_MODEL="text-embedding-3-small
+EMBEDDING_MODEL="text-embedding-ada-002"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 openai_embeddings = OpenAIEmbeddings(
