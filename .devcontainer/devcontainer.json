@@ -1,5 +1,5 @@
 {
-    "name": "Rag Chat Bot",
+    "name": "Vector Visualization",
     "image": "python:3.10.16-bullseye",
     "remoteUser": "root"
 }

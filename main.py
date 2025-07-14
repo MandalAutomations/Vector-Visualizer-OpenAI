@@ -38,9 +38,6 @@ def plot_embeddings_3d(embeddings_3d, labels):
         ax.text(x, y, z, text, fontsize=10)
 
     ax.set_title("3D Visualization of Similar Words Embeddings")
-    ax.set_xlabel("PCA1")
-    ax.set_ylabel("PCA2")
-    ax.set_zlabel("PCA3")
     ax.legend(loc='center left', bbox_to_anchor=(1.05, 0.5), title="Words")  # Adjust position
     plt.tight_layout()
     plt.savefig("3d_plot_small.png", dpi=1000, bbox_inches='tight')
@@ -52,7 +49,6 @@ texts = [
     "basketball",
     "baseball",
 ]
-
 
 embeddings = []
 for text in texts:
