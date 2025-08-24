@@ -84,4 +84,4 @@ Example output:
   ```
 
 ## Example Plot
-*(Insert generated 3D plot image here)*
+![Alt Text](./static/3d_plot_small.png)
