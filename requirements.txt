@@ -1,6 +1,7 @@
 numpy==2.2.4
 langchain_openai
-dotenv
+python-dotenv
 pandas
-sklearn
+scikit-learn
 flask
+matplotlib
