@@ -42,13 +42,7 @@ def plot_embeddings_3d(embeddings_3d, labels):
     plt.tight_layout()
     plt.savefig("3d_plot_small.png", dpi=1000, bbox_inches='tight')
     
-texts = [
-    "nfl",
-    "football",
-    "soccer",
-    "basketball",
-    "baseball",
-]
+texts = open("words.txt", "r").read().splitlines()
 
 embeddings = []
 for text in texts:
@@ -56,7 +50,6 @@ for text in texts:
     if embedding is not None:
         embeddings.append(embedding)
         
-
 embeddings = np.array(embeddings)
 
 pca = PCA(n_components=3)
